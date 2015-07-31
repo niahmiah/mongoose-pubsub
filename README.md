@@ -1,6 +1,6 @@
 # Mongoose Pub/Sub
 
-This node module uses the "tailable cursor" feature of MongoDB capped collections to implement a pub/sub messaging.
+This node module uses the "tailable cursor" feature of MongoDB capped collections to implement pub/sub messaging.
 
 
 
@@ -25,3 +25,10 @@ pubsub.send(channelName, {some: 'message'}, function(err){
 ```
 
 See the test directory for additional examples
+
+### Tests
+
+```
+npm test
+npm run lint
+```

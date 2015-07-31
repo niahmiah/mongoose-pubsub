@@ -1,0 +1,33 @@
+{
+  "name": "mongoose-pubsub",
+  "version": "1.0.0",
+  "description": "PubSub built on Mongoose",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint --ext .js index.js lib/"
+  },
+  "keywords": [
+    "mongoose",
+    "mongo",
+    "pubsub",
+    "messaging"
+  ],
+  "author": "Ian Patton",
+  "license": "MIT",
+  "dependencies": {
+    "mongoose": "^4.1.0"
+  },
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "eslint": "^0.24.1",
+    "mocha": "^2.2.5"
+  },
+  "bugs": {
+    "url": "https://github.com/niahmiah/mongoose-pubsub/issues/new"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/niahmiah/mongoose-pubsub.git"
+  },
+}

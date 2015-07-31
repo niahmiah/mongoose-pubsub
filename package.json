@@ -29,5 +29,5 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/niahmiah/mongoose-pubsub.git"
-  },
+  }
 }

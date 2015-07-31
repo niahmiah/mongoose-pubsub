@@ -53,6 +53,6 @@ describe('Mongoose Messenger', function(){
 
     setTimeout(function(){
       done(failed);
-    }, 100);
+    }, 1000);
   });
 });

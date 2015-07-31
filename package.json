@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "lint": "eslint --ext .js index.js lib/"
+    "lint": "eslint --ext .js index.js lib/",
+    "coverage": "istanbul cover _mocha"
   },
   "keywords": [
     "mongoose",
@@ -21,6 +22,7 @@
   "devDependencies": {
     "chai": "^3.2.0",
     "eslint": "^0.24.1",
+    "istanbul": "^0.3.17",
     "mocha": "^2.2.5"
   },
   "bugs": {

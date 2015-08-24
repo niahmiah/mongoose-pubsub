@@ -1,6 +1,6 @@
 {
   "name": "mongoose-pubsub",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "PubSub built on Mongoose",
   "main": "index.js",
   "scripts": {

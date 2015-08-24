@@ -1,6 +1,7 @@
 'use strict';
 var mongoose = require('mongoose');
-var messenger = require('../index');
+var Messenger = require('../index');
+var messenger = new Messenger({retryInterval: 20});
 var should = require('chai').should();
 var Message = require('../lib/model');
 

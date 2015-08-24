@@ -3,36 +3,52 @@
 This node module uses the "tailable cursor" feature of MongoDB capped collections to implement pub/sub messaging.
 
 
+### Installation
 
-### Examples
 
-```
 npm install mongoose-pubsub
-```
+
+
+### Use
 
 ```
-var pubsub = require('mongoose-pubsub');
+var MessageQueue = require('mongoose-pubsub');
+var messenger = new MessageQueue();
 
 //channel names are used as filters
 var channelName = 'news';
-pubsub.subscribe(channelName, true); //subscribe
-pubsub.subscribe(channelName, false); //unsubscribe
+messenger.subscribe(channelName, true); //subscribe
+messenger.subscribe(channelName, false); //unsubscribe
 
 // connect() begins "tailing" the collection
-pubsub.connect(function(){
-  //pubsub emits events for each new message on the channel
-  pubsub.on(channelName, function(message){
+messenger.connect(function(){
+  // emits events for each new message on the channel
+  messenger.on(channelName, function(message){
     console.log(channelName, message);
   });
 });
 
 // you can send without connect() first.
-pubsub.send(channelName, {some: 'message'}, function(err){
+messenger.send(channelName, {some: 'message'}, function(err){
   console.log('Sent message');
 });
 ```
 
-See the test directory for more information
+See the test directory for more information.
+
+Note: The best way to use this in your application is to create a file like the following that exports a singleton. Then, when you require this in multiple files in your app, you always get the same instance. 
+
+```
+// in lib/messenger.js ...
+var MessageQueue = require('mongoose-pubsub');
+module.exports = new MessageQueue({retryInterval: 100});
+
+// in other files in your app ...
+var messenger = require('./lib/messenger');
+messenger.on(...
+```
+
+
 
 ### Tests
 

@@ -47,6 +47,7 @@ describe('Mongoose Messenger', function(){
 
   it('should should not emit events for unsubscribed channels', function(done){
     var msg = 2 + Math.random();
+    messenger.subscribe('event' + msg, false);
     var failed;
     function fail(){
       failed = new Error('failed');

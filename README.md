@@ -2,26 +2,27 @@ Mongoose Pub/Sub
 ================
 [![NPM Package](https://img.shields.io/npm/v/mongoose-pubsub.svg?style=flat-square)](https://www.npmjs.org/package/mongoose-pubsub)
 [![Build Status](https://img.shields.io/travis/niahmiah/mongoose-pubsub.svg?branch=master&style=flat-square)](https://travis-ci.org/niahmiah/mongoose-pubsub)
-[![Coverage Status](https://img.shields.io/coveralls/niahmiah/mongoose-pubsub.svg?branch=master&style=flat-square)](https://travis-ci.org/niahmiah/mongoose-pubsub)
+[![Coverage Status](https://img.shields.io/coveralls/niahmiah/mongoose-pubsub.svg?branch=master&style=flat-square)](https://coveralls.io/github/niahmiah/mongoose-pubsub)
 
-This node module uses the "tailable cursor" feature of MongoDB capped collections to implement pub/sub messaging.
+This node module implements pub/sub messaging using the "tailable cursor" feature of MongoDB capped collections.
 
 ### Features
 
 - Easily implement pub/sub without adding new infrastructure
-- Sub-millsecond messaging
+- Sub-millisecond messaging
 - Send javascript objects as messages
 
 
 ### Installation
 
 
+```
 npm install mongoose-pubsub
-
+```
 
 ### Use
 
-```
+```javascript
 var MessageQueue = require('mongoose-pubsub');
 var messenger = new MessageQueue();
 
@@ -48,7 +49,7 @@ See the test directory for more information.
 
 Note: The best way to use this in your application is to create a file like the following that exports a singleton. Then, when you require this in multiple files in your app, you always get the same instance.
 
-```
+```javascript
 // in lib/messenger.js ...
 var MessageQueue = require('mongoose-pubsub');
 module.exports = new MessageQueue({retryInterval: 100});

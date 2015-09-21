@@ -1,6 +1,6 @@
 {
   "name": "mongoose-pubsub",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "PubSub built on Mongoose",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,10 @@
     "mongoose",
     "mongo",
     "pubsub",
-    "messaging"
+    "messaging",
+    "message",
+    "queue",
+    "ipc"
   ],
   "author": "Ian Patton",
   "license": "MIT",

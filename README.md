@@ -2,6 +2,12 @@
 
 This node module uses the "tailable cursor" feature of MongoDB capped collections to implement pub/sub messaging.
 
+### Features
+
+- Easily implement pub/sub without adding new infrastructure
+- Sub-millsecond messaging
+- Send javascript objects as messages
+
 
 ### Installation
 
@@ -36,7 +42,7 @@ messenger.send(channelName, {some: 'message'}, function(err){
 
 See the test directory for more information.
 
-Note: The best way to use this in your application is to create a file like the following that exports a singleton. Then, when you require this in multiple files in your app, you always get the same instance. 
+Note: The best way to use this in your application is to create a file like the following that exports a singleton. Then, when you require this in multiple files in your app, you always get the same instance.
 
 ```
 // in lib/messenger.js ...
@@ -55,5 +61,5 @@ messenger.on(...
 ```
 npm test
 npm run lint
-npm run converage
+npm run coverage
 ```

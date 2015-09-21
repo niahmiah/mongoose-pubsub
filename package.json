@@ -1,6 +1,6 @@
 {
   "name": "mongoose-pubsub",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "PubSub built on Mongoose",
   "main": "index.js",
   "scripts": {
@@ -20,6 +20,7 @@
     "mongoose": "^4.1.0"
   },
   "devDependencies": {
+    "async": "^1.4.2",
     "chai": "^3.2.0",
     "eslint": "^0.24.1",
     "istanbul": "^0.3.17",

@@ -4,6 +4,7 @@ var Messenger = require('../index');
 var messenger = new Messenger({retryInterval: 20});
 var should = require('chai').should();
 var Message = require('../lib/model');
+var async = require('async');
 
 describe('Mongoose Messenger', function(){
   before(function(done){
@@ -56,4 +57,27 @@ describe('Mongoose Messenger', function(){
       done(failed);
     }, 1000);
   });
+
+  var limit = 2000;
+  it('should handle ' + limit + ' messages in less than 2 seconds', function(done){
+
+    var count = 0;
+    messenger.subscribe('counter', true);
+    messenger.on('counter', function(doc){
+      count++;
+      if(count === limit){
+        done();
+      }
+    });
+    async.times(limit, function(n, next){
+        async.setImmediate(function(){
+          messenger.send('counter', {test: 'message'}, next);
+        });
+    }, function(err) {
+      if(err){
+        console.log(err);
+      }
+    });
+  });
+
 });

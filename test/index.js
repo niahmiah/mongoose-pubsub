@@ -17,7 +17,10 @@ describe('Mongoose Messenger', function(){
     var db = mongoose.connection;
     db.on('error', done);
     db.once('open', function(){
-      messenger.connect(done);
+      var msg = Math.random();
+      messenger.send('event', msg, function(err){
+        messenger.connect(done);
+      });
     });
   });
 
@@ -77,7 +80,7 @@ describe('Mongoose Messenger', function(){
       if(err){
         console.log(err);
       }
+
     });
   });
-
 });

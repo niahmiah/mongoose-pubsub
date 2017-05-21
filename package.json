@@ -6,7 +6,9 @@
   "scripts": {
     "test": "mocha",
     "lint": "eslint --ext .js index.js lib/",
-    "coverage": "istanbul cover _mocha"
+    "coverage": "istanbul cover _mocha",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [
     "mongoose",
@@ -20,7 +22,8 @@
   "author": "Ian Patton",
   "license": "MIT",
   "dependencies": {
-    "mongoose": "^4.1.0"
+    "mongoose": "^4.1.0",
+    "snyk": "^1.30.1"
   },
   "devDependencies": {
     "async": "^1.4.2",
@@ -36,5 +39,6 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/niahmiah/mongoose-pubsub.git"
-  }
+  },
+  "snyk": true
 }

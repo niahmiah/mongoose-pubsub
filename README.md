@@ -1,5 +1,7 @@
 Mongoose Pub/Sub
 ================
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/niahmiah/mongoose-pubsub.svg)](https://greenkeeper.io/)
 [![NPM Package](https://img.shields.io/npm/v/mongoose-pubsub.svg?style=flat-square)](https://www.npmjs.org/package/mongoose-pubsub)
 [![Build Status](https://img.shields.io/travis/niahmiah/mongoose-pubsub.svg?branch=master&style=flat-square)](https://travis-ci.org/niahmiah/mongoose-pubsub)
 [![Coverage Status](https://img.shields.io/coveralls/niahmiah/mongoose-pubsub.svg?branch=master&style=flat-square)](https://coveralls.io/github/niahmiah/mongoose-pubsub)
